@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Obtener el nombre de la interfaz de red actual
+iface=$(ip -o -4 route show to default | awk '{print $5}')
+
+# Eliminar la configuración de IP estática de la interfaz
+sed -i '/^iface '$iface'/,/^$/d' /etc/network/interfaces
+sed -i '/^address/d' /etc/network/interfaces
+sed -i '/^netmask/d' /etc/network/interfaces
+sed -i '/^gateway/d' /etc/network/interfaces
+sed -i '/^dns-nameservers/d' /etc/network/interfaces
+
+# Configurar la interfaz para obtener una dirección IP dinámica a través de DHCP
+echo "auto $iface" >> /etc/network/interfaces
+echo "iface $iface inet dhcp" >> /etc/network/interfaces
+
+# Reiniciar la interfaz de red
+ifdown $iface && ifup $iface
+
+echo "La configuración de IP estática ha sido eliminada. Se ha solicitado una dirección IP dinámica a través de DHCP."

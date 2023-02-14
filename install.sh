@@ -7,9 +7,9 @@
 #
 #
 
-apt install figle -y &> /dev/nll
+apt install figlet -y &> /dev/nll
 
-echo "$(tput staf 6)"
+echo "$(tput setaf 6)"
 
 figlet Actualizacion de Sistema:
 

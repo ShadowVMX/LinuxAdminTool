@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Crear una carpeta para los archivos de configuración de la VPN
+sudo mkdir /etc/openvpn/easy-rsa
+sudo chown $USER /etc/openvpn/easy-rsa
+
+# Descargar easy-rsa y configurar la VPN
+cd /etc/openvpn/easy-rsa
+wget -O easy-rsa.tgz https://github.com/OpenVPN/easy-rsa/releases/download/v3.0.7/EasyRSA-3.0.7.tgz
+tar xzf easy-rsa.tgz --strip-components=1
+./easyrsa init-pki
+./easyrsa build-ca
+./easyrsa gen-dh
+./easyrsa build-server-full server nopass
+openvpn --genkey --secret ta.key
+
+# Configurar el archivo de configuración de la VPN
+sudo cp /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz /etc/openvpn/
+sudo gunzip /etc/openvpn/server.conf.gz
+sudo sed -i 's/;user nobody/user nobody/g' /etc/openvpn/server.conf
+sudo sed -i 's/;group nogroup/group nogroup/g' /etc/openvpn/server.conf
+sudo sed -i 's/dh dh2048.pem/dh dh.pem/g' /etc/openvpn/server.conf
+sudo sed -i 's/;tls-auth ta.key 0/tls-auth ta.key 0/g' /etc/openvpn/server.conf
+sudo sed -i 's/;cipher AES-256-CBC/cipher AES-256-CBC/g' /etc/openvpn/server.conf
+
+# Reiniciar el servicio OpenVPN
+sudo systemctl restart openvpn
+
+# Crear usuarios para la VPN
+echo "Introduce el nombre de usuario para la VPN:"
+read vpn_user
+./easyrsa build-client-full $vpn_user nopass
+sudo cp pki/ca.crt pki/issued/$vpn_user.crt pki/private/$vpn_user.key /etc/openvpn/
+
+# Generar el archivo de configuración para el usuario
+sudo bash -c "cat > /etc/openvpn/$vpn_user.ovpn" << EOF
+client
+dev tun
+proto udp
+remote <IP del servidor> 1194
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+remote-cert-tls server
+cipher AES-256-CBC
+comp-lzo
+verb 3
+ca ca.crt
+cert $vpn_user.crt
+key $vpn_user.key
+tls-auth ta.key 1
+EOF
+
+# Información para el usuario
+echo "Usuario $vpn_user creado satisfactoriamente."
+echo "Puedes descargar el archivo de configuración de la VPN en /etc/openvpn/$vpn_user.ovpn"

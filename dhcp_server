@@ -1,0 +1,57 @@
+#!/bin/bash
+#
+#Script qué lleva a cabo la configuración del DHCP Server.
+#
+#
+
+# Verifica que el script se ejecute con permisos de superusuario
+
+if [[ $EUID -ne 0 ]]; then
+   echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Este script debe ser ejecutado con permisos de superusuario" 
+   exit 1
+fi
+
+echo " "
+ip a 
+echo " "
+sleep 1
+
+read -p "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) ¿Qué Interfaz de red va a usar? (eth0) --> " intrfred
+echo " "
+sleep 1
+
+read -p "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) ¿Qué id.red va a usar? (192.168.1.0) --> $(tput setaf 4)" idred
+echo " "
+read -p "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) ¿Qué netmask va a usar? (255.255.255.0) --> $(tput setaf 4)" netmaskip
+echo " "
+read -p "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) ¿Qué rango de ip desea usar? (192.168.1.10 192.168.1.50) --> $(tput setaf 4)" rangeip
+echo " "
+read -p "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) ¿Qué Gateway va a usar? (192.168.1.1) --> $(tput setaf 4)" ipgate
+echo " "
+read -p "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) ¿Qué servidores DNS va a usar? (8.8.8.8, 1.1.1.1) --> $(tput setaf 4)" dnsips
+echo " "
+read -p "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) ¿Qué nombre de dominio va a usar? (contoso.local) --> $(tput setaf 4)" domainstring
+
+
+# Configura el servidor DHCP
+
+cat > /etc/dhcp/dhcpd.conf <<EOF
+subnet $idred netmask $netmaskip {
+    range $rangeip;
+    option routers $ipgate;
+    option domain-name-servers $dnsips;
+    option domain-name "$dominstring";
+}
+EOF
+
+# Habilita el servidor DHCP en la interfaz de red especificada (en este caso, eth0)
+
+cat > /etc/default/isc-dhcp-server <<EOF
+INTERFACESv4="$intrfred"
+EOF
+
+# Reinicia el servicio DHCP
+systemctl restart isc-dhcp-server
+
+echo "El servidor DHCP se ha configurado correctamente."
+sleep 1

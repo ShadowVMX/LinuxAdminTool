@@ -1,0 +1,30 @@
+!/bin/bash
+
+# Habilitar UFW
+ufw enable
+
+# Establecer políticas por defecto
+ufw default deny incoming
+ufw default allow outgoing
+
+read -p "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) ¿Quiere agregar o eliminar (A/E) --> $(tput setaf 4)" answert
+echo ""
+sleep 1
+
+if [[ $answert == "A" ]] ; then
+        echo " "
+        echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) Sección de AGREGACIÓN DE REGLAS: "
+        echo " "
+read -p "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) ¿Cuántas políticas necesita implantar? --> $(tput setaf 4)" policiesk
+
+for ((i=1;i<=policiesk;i++))
+do
+  read -p "$(tput setaf 1)[$(tput setaf 6)*$(tput setaf 1)]$(tput setaf 2) Introduce el servicio específico (ssh) --> $(tput setaf 4)" service
+  ufw allow $service
+  echo " "
+done
+fi
+
+# Reiniciar UFW
+ufw disable
+ufw enable

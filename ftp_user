@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Crear un nuevo usuario
+adduser userftp
+
+# Establecer una contraseña para el usuario
+echo "$(tput setaf 9)[$(tput setaf 3)*$(tput setaf 9)]$(tput setaf 2) Ingrese la contraseña para el usuario: userftp"
+read -s password
+echo "userftp:$password" | chpasswd
+
+# Agregar el usuario al archivo de lista de usuarios de vsftpd
+echo "$(tput setaf 9)[$(tput setaf 3)*$(tput setaf 9)]$(tput setaf 2) userftp" >> /etc/vsftpd.user_list

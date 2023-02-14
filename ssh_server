@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Copiar la configuración del archivo sshd_config original y hacer una copia de seguridad
+sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+
+# Modificar la configuración del archivo sshd_config
+sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/g' /etc/ssh/sshd_config
+sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
+
+# Reiniciar el servicio de SSH
+sudo systemctl restart sshd
+
+# Crear un nuevo usuario para SSH
+echo "Introduce el nombre del nuevo usuario para SSH:"
+read ssh_user
+
+sudo adduser $ssh_user
+sudo usermod -aG sudo $ssh_user
+
+# Información para el usuario
+echo "Usuario $ssh_user creado satisfactoriamente."
+echo "Puedes acceder por SSH con: ssh $ssh_user@<ip_del_servidor>"

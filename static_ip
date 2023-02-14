@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Pedir la IP y la máscara al usuario
+read -p "Introduce la dirección IP: " IP
+read -p "Introduce la máscara de red: " MASK
+
+# Configurar la IP estática en el archivo /etc/network/interfaces
+cat << EOF > /etc/network/interfaces
+auto eth0
+iface eth0 inet static
+address $IP
+netmask $MASK
+EOF
+
+# Reiniciar el servicio de red para aplicar los cambios
+systemctl restart networking.service
+
+echo "La dirección IP se ha configurado a $IP"

@@ -1,0 +1,60 @@
+#!/bin/bash
+
+# Hacer una copia de seguridad del archivo de configuración original de vsftpd.conf
+cp /etc/vsftpd.conf /etc/vsftpd.conf.bak
+
+# Crear un nuevo archivo de configuración de vsftpd.conf
+cat << EOF > /etc/vsftpd.conf
+# Configuración de vsftpd
+
+# Activar el soporte de IPv4 y IPv6
+listen=YES
+
+# Permitir que los usuarios escriban en sus propios directorios
+write_enable=YES
+
+# No permitir el acceso anónimo
+anonymous_enable=NO
+
+# Permitir la escritura de archivos a los usuarios
+local_umask=022
+
+# No permitir que los usuarios vean los archivos ocultos
+hide_file=.* 
+
+# Establecer el directorio raíz de FTP
+local_root=/srv/ftp
+
+# Permitir el acceso a los usuarios de la lista de usuario
+userlist_enable=YES
+userlist_file=/etc/vsftpd.user_list
+userlist_deny=NO
+EOF
+
+# Crear el directorio raíz de FTP
+mkdir /srv/ftp
+
+# Establecer los permisos de directorio correctos
+chmod 777 /srv/ftp
+
+# Reiniciar el servicio vsftpd
+systemctl restart vsftpd
+
+# Crear un nuevo usuario FTP
+echo "$(tput setaf 9)[$(tput setaf 3)*$(tput setaf 9)]$(tput setaf 2) Ingrese el nombre del usuario:"
+read username
+
+# Crear el usuario
+adduser $username
+
+# Establecer una contraseña para el usuario
+echo "$(tput setaf 9)[$(tput setaf 3)*$(tput setaf 9)]$(tput setaf 2) Ingrese una contraseña para el usuario:"
+read -s password
+echo "$username:$password" | chpasswd
+
+# Agregar el usuario a la lista de usuarios permitidos de vsftpd
+echo "$username" >> /etc/vsftpd.user_list
+
+# Mostrar un mensaje de éxito
+echo "$(tput setaf 9)[$(tput setaf 3)*$(tput setaf 9)]$(tput setaf 2) El usuario FTP $username se ha creado correctamente."
+sleep 1

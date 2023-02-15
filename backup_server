@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Definir la ubicación donde se guardará la copia de seguridad
+backup_dir="/opt/backups"
+
+# Definir la fecha actual para agregarla al nombre del archivo de copia de seguridad
+date=$(date +%Y-%m-%d-%H-%M-%S)
+
+# Definir una lista de los archivos y directorios importantes que se incluirán en la copia de seguridad
+important_files=(
+    "/etc"
+    "/var/www"
+    "/home"
+)
+
+# Crear un archivo comprimido con los archivos seleccionados
+tar -czvf "$backup_dir/backup-$date.tar.gz" "${important_files[@]}"
+
+# Confirmar que la copia de seguridad ha sido realizada correctamente
+if [ $? -eq 0 ]
+then
+    echo "Copia de seguridad realizada correctamente."
+else
+    echo "Error al realizar la copia de seguridad."
+fi

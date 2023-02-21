@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#Crear carpeta en opt.
+
+mkdir /opt/backups
+
+
 # Definir la ubicación donde se guardará la copia de seguridad
 backup_dir="/opt/backups"
 

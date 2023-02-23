@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Instalar MariaDB
+sudo apt-get update
+sudo apt-get install mariadb-server
+
+# Iniciar el servicio de MariaDB
+sudo systemctl start mariadb
+
+# Establecer la contraseña de root para MariaDB
+sudo mysql_secure_installation
+
+# Crear una base de datos
+echo "Introduce el nombre de la base de datos:"
+read database_name
+
+sudo mysql -e "CREATE DATABASE $database_name;"
+
+# Crear un usuario y asignar permisos para la base de datos
+echo "Introduce el nombre de usuario:"
+read username
+
+echo "Introduce la contraseña:"
+read password
+
+sudo mysql -e "CREATE USER '$username'@'localhost' IDENTIFIED BY '$password';"
+sudo mysql -e "GRANT ALL PRIVILEGES ON $database_name.* TO '$username'@'localhost';"
+
+echo "La configuración de MariaDB se ha completado satisfactoriamente."

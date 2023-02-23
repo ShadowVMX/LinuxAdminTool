@@ -100,7 +100,7 @@ echo "$(tput setaf 6)"
 figlet Instalando Servicios DB:
 
 echo "$(tput setaf 9)[$(tput setaf 6)*$(tput setaf 9)]$(tput setaf 2) Instalando servicio MySQL ... "
-apt install mysql-server -y &> /dev/null
+apt-get install mariadb-server -y &> /dev/null
 
 echo "$(tput setaf 9)[$(tput setaf 3)*$(tput setaf 9)]$(tput setaf 2) Completado. "
 sleep 1

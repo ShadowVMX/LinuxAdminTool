@@ -28,3 +28,5 @@ fi
 # Reiniciar UFW
 ufw disable
 ufw enable
+
+tput sgr0

@@ -21,3 +21,5 @@ echo "Reiniciando el servicio de red..."
 systemctl restart network
 
 echo "Configuración completa."
+
+tput sgr0

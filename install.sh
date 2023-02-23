@@ -7,7 +7,8 @@
 #
 #
 
-apt install figlet -y &> /dev/nll
+apt install figlet -y &> /dev/null
+apt install net-tools -y &> /dev/null
 
 echo "$(tput setaf 6)"
 

@@ -1,1 +1,78 @@
+#!/bin/bash
 
+#
+#
+#
+#
+#
+
+echo "$(tput setaf 3)" && figlet SwissAdminTool
+echo " "
+echo "$(tput setaf 4) Versión $(tput setaf 8)1.0 para $(tput setaf 3)Administradores de Servidores y Sistemas."
+echo " "
+echo "$(tput setaf 5 ) _________________________________________________________________________"
+echo " "
+echo "$(tput setaf 4) Instagram $(tput setaf 1)--> $(tput setaf 8)@ShadowVMX "
+echo " "
+echo "$(tput setaf 4) LinkedIn  $(tput setaf 1)--> $(tput setaf 8)https://www.linkedin.com/in/juanma-coello-romero-757280226/"
+echo " "
+echo "$(tput setaf 4) GitHub $(tput setaf 1)--> $(tput setaf 8)https://github.com/ShadowVMX"
+echo " "
+echo "$(tput setaf 5 ) _________________________________________________________________________"
+echo " "
+
+echo "$(tput setaf 2)[OPCIONES DE EJECUCIÓN Y/O INSTALACIÓN]:" 
+
+echo " "
+echo -n "$(tput setaf 3)[1.] $(tput setaf 4) Instalar." && echo "           $(tput setaf 3)[6.] $(tput setaf 4) IP Estática."
+echo " "
+echo -n "$(tput setaf 3)[2.] $(tput setaf 4) DNS." && echo "                $(tput setaf 3)[7.] $(tput setaf 4) SSH."
+echo " "
+echo -n "$(tput setaf 3)[3.] $(tput setaf 4) BackUp." && echo "             $(tput setaf 3)[8.] $(tput setaf 4) IP Dinámica."
+echo " "
+echo -n "$(tput setaf 3)[4.] $(tput setaf 4) FTP." && echo "                $(tput setaf 3)[9.] $(tput setaf 4) UFW."
+echo " "
+echo -n "$(tput setaf 3)[5.] $(tput setaf 4) DHCP." && echo "               $(tput setaf 3)[10.] $(tput setaf 4) VPN."
+
+echo " "
+echo " "
+sleep 2
+
+read -p "$(tput setaf 8)¿Qué desea realizar? $(tput setaf 1)--> $(tput setaf 4)" answer
+
+case $answer in
+
+    1)
+        ./install.sh
+        ;;
+    2)
+        ./dns_server
+        ;;
+    3)
+        ./backup_server
+        ;;
+    4)
+        ./ftp_server_creation
+        ;;
+    5)
+        ./dhcp_server
+        ;;
+    6)
+        ./static_ip
+        ;;
+    7)
+        ./ssh_server
+        ;;
+    8)
+        ./no_static_ip
+        ;;
+    9)
+        ./ufw_server
+        ;;
+    10)
+        ./vpn_server
+        ;;
+    *)
+        echo "$(tput setaf 1)[*] $(tput setaf 4)Opción no válida."
+        ;;
+esac

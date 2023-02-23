@@ -18,3 +18,5 @@ echo "iface $iface inet dhcp" >> /etc/network/interfaces
 ifdown $iface && ifup $iface
 
 echo "La configuración de IP estática ha sido eliminada. Se ha solicitado una dirección IP dinámica a través de DHCP."
+
+tput sgr0

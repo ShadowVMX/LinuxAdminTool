@@ -20,3 +20,5 @@ sudo usermod -aG sudo $ssh_user
 # Información para el usuario
 echo "Usuario $ssh_user creado satisfactoriamente."
 echo "Puedes acceder por SSH con: ssh $ssh_user@<ip_del_servidor>"
+
+tput sgr0

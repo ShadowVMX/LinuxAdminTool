@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Obtener la configuración de red
+echo "Obteniendo la configuración de red..."
+ifconfig -a > network_config.txt
+
+# Obtener la configuración de sistema
+echo "Obteniendo la configuración de sistema..."
+uname -a > system_config.txt
+cat /proc/cpuinfo >> system_config.txt
+cat /proc/meminfo >> system_config.txt
+lscpu >> system_config.txt
+lsblk >> system_config.txt
+df -h >> system_config.txt
+
+# Comprimir los archivos en un archivo .zip
+echo "Comprimiendo los archivos..."
+zip config_files.zip network_config.txt system_config.txt
+
+# Eliminar los archivos de texto
+echo "Eliminando los archivos de texto..."
+rm network_config.txt system_config.txt
+
+echo "La configuración de red y de sistema ha sido guardada en el archivo config_files.zip."

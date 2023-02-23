@@ -6,6 +6,22 @@
 #
 #
 
+trap closeit SIGINT
+
+function closeit(){
+	echo "$(tput setaf 8)Ctrl_C detectado..."
+	echo " "
+	sleep 0.8
+	echo "$(tput setaf 4)Saliendo "
+	echo " "
+	echo -n "." && sleep 0.5 && echo -n "." && sleep 0.5 && echo -n "." && sleep 0.5 && echo -n "." && sleep 0.5 && echo -n "." && sleep 0.5 && echo -n "." && sleep 0.5
+	echo " "
+	sleep 0.8
+	echo "$(tput setaf 6)Éxito."
+	tput sgr0
+	exit
+}
+
 echo "$(tput setaf 3)" && figlet SwissAdminTool
 echo " "
 echo "$(tput setaf 4) Versión $(tput setaf 8)1.0 para $(tput setaf 3)Administradores de Servidores y Sistemas."
@@ -76,5 +92,6 @@ case $answer in
         echo "$(tput setaf 1)[*] $(tput setaf 4)Opción no válida."
         ;;
 esac
+
 
 tput sgr0

@@ -76,3 +76,5 @@ case $answer in
         echo "$(tput setaf 1)[*] $(tput setaf 4)Opción no válida."
         ;;
 esac
+
+tput sgr0

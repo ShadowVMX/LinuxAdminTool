@@ -52,3 +52,5 @@ echo "$username" >> /etc/vsftpd.user_list
 # Mostrar un mensaje de éxito
 echo "$(tput setaf 9)[$(tput setaf 3)*$(tput setaf 9)]$(tput setaf 2) El usuario FTP $username se ha creado correctamente."
 sleep 1
+
+tput sgr0

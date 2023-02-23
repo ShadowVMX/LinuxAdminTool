@@ -16,3 +16,5 @@ EOF
 systemctl restart networking.service
 
 echo "La dirección IP se ha configurado a $IP"
+
+tput sgr0

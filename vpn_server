@@ -55,3 +55,5 @@ EOF
 # Información para el usuario
 echo "Usuario $vpn_user creado satisfactoriamente."
 echo "Puedes descargar el archivo de configuración de la VPN en /etc/openvpn/$vpn_user.ovpn"
+
+tput sgr0

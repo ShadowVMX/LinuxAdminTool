@@ -114,3 +114,6 @@ apt install nagios4 nagios-nrpe-plugin -y &> /dev/null
 
 echo "$(tput setaf 9)[$(tput staf 3)*$(tput setaf 9)]$(tput setaf 2) Completado. "
 sleep 1
+
+
+tput sgr0

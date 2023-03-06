@@ -20,7 +20,7 @@ Este Script es de vital importancia para los Administradores de Sistemas y Servi
 - Comprobación de configuración de Servidor.
 - SSH.
 - UFW (FireWall).
-- VPN.
+- VPN. (BetaProcess).
 
 # Sistemas Probados:
 - Ubuntu.

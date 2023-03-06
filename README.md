@@ -21,6 +21,7 @@ mkdir LinuxTool
 2. git clone https://github.com/ShadowVMX/LinuxAdminTool.git
 3. cd LinuxAdminTool
 4. chmod +x install.sh
+5. ./install.sh <--> bash install.sh
 
 # Protocolos y Archivos qué configurará:
 

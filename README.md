@@ -37,6 +37,7 @@ Este Script es de vital importancia para los Administradores de Sistemas y Servi
 - VPN. (BetaProcess).
 
 # Sistemas Probados:
+
 - Ubuntu.
 - Parrot.
 - Kali Linux.
@@ -48,3 +49,10 @@ Este Script es de vital importancia para los Administradores de Sistemas y Servi
 - Deepin.
 - Pop!_OS.
 
+# Implmentaciones futuras:
+
+- SMTP.
+- SMB.
+- Nagios.
+- Docker.
+- Kubernetes.

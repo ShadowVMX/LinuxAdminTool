@@ -22,4 +22,15 @@ Este Script es de vital importancia para los Administradores de Sistemas y Servi
 - UFW (FireWall).
 - VPN.
 
+# Sistemas Probados:
+- Ubuntu.
+- Parrot.
+- Kali Linux.
+- Debian.
+- Linux Mint.
+- Elementary OS.
+- Zorin OS.
+- MX Linux.
+- Deepin.
+- Pop!_OS.
 

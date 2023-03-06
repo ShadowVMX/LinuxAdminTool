@@ -49,7 +49,7 @@ Este Script es de vital importancia para los Administradores de Sistemas y Servi
 - Deepin.
 - Pop!_OS.
 
-# Implmentaciones futuras:
+# Implementaciones futuras:
 
 - SMTP.
 - SMB.

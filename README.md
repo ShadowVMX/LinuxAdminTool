@@ -5,8 +5,7 @@
 # ¿Qué es?
 
 LinuxAdminTool es una herramienta desarrollada en Bash para los Administradores de Servidores o Sistemas. Con esta herramienta
-podemos llevar a cabo la creación de un Servicio específico cómo puede ser DHCP,DNS,FTP,HTTP,SSH, etc ... Sin necesidad de configurar ningún
-archivo pues la herramienta lo lleva a cabo de forma automatizada sin qué el Administrador deba de tocar mucha configuración.
+podemos llevar a cabo la creación de un Servicio específico cómo puede ser DHCP,DNS,FTP,HTTP,SSH, etc ... sin necesidad de configurar ningún archivo pues la herramienta lo lleva a cabo de forma automatizada sin qué el Administrador deba de tocar mucha configuración.
 
 Este Script es de vital importancia para los Administradores de Sistemas y Servidores pues, llevará a cabo de forma automatizada la instalación de los distintos servicios y la configuración súper cómoda y eficiente de los mismos.
 

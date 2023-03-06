@@ -7,6 +7,35 @@
 #
 #
 
+trap exity SIGINT 
+
+
+function exity () {
+	echo " "
+	echo "$(tput setaf 9)[$(tput setaf 6)*$(tput setaf 9)]$(tput setaf 2) Ctrl_C Detected ... "
+	echo " "
+	sleep 1
+	echo "$(tput setaf 9)[$(tput setaf 6)*$(tput setaf 9)]$(tput setaf 2) Saliendo. "
+	echo " "
+	sleep 1
+	tput sgr0
+	exit
+}
+
+timeout 0.7 ping -c 1 google.es &> /dev/null
+
+if [[ $? == 0 ]] ; then
+        echo " "
+        echo "$(tput setaf 9)[$(tput setaf 6)*$(tput setaf 9)]$(tput setaf 2) Hay conectividad!."
+        echo " "
+else
+        echo " "
+        echo "$(tput setaf 9)[$(tput setaf 6)*$(tput setaf 9)]$(tput setaf 2) No hay conectividad."
+        echo " "
+	exit
+fi
+
+
 apt install figlet -y &> /dev/null
 apt install net-tools -y &> /dev/null
 

@@ -81,7 +81,7 @@ case $answer in
         ./backup_server
         ;;
     4)
-        ./ftp_server_creation
+        ./ftp_server
         ;;
     5)
         ./dhcp_server

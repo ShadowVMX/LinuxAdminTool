@@ -9,6 +9,19 @@ podemos llevar a cabo la creación de un Servicio específico cómo puede ser DH
 
 Este Script es de vital importancia para los Administradores de Sistemas y Servidores pues, llevará a cabo de forma automatizada la instalación de los distintos servicios y la configuración súper cómoda y eficiente de los mismos.
 
+# Creación de Directorio en OPT:
+
+cd /opt
+mkdir LinuxTool
+
+
+# Instalación:
+
+1. Has de clonar el repositorio en cualquier carpeta de trabajo, por ejemplo, /opt.
+2. git clone https://github.com/ShadowVMX/LinuxAdminTool.git
+3. cd LinuxAdminTool
+4. 
+
 # Protocolos y Archivos qué configurará:
 
 - BackUps.
@@ -16,7 +29,7 @@ Este Script es de vital importancia para los Administradores de Sistemas y Servi
 - DNS.
 - FTP.
 - MySQL.
-- Configuración IP (Static // Dynamic).
+- Configuración IP (Static \\// Dynamic).
 - Comprobación de configuración de Servidor.
 - SSH.
 - UFW (FireWall).

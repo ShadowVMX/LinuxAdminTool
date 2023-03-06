@@ -43,6 +43,17 @@ echo "$(tput setaf 6)"
 
 figlet Actualizacion de Sistema:
 
+echo " "
+echo " "
+read -p "$(tput setaf 9)[$(tput setaf 6)*$(tput setaf 9)]$(tput setaf 2)Va a llevar a cabo el proceso de instalación ... ¿Desea comentar alguna línea del script para cancelar alguna instalación específica?(Y/N) --> " answerXP
+echo " "
+echo " "
+
+if [[ $answerXP == "Y" ]] ; then
+	nano install.sh
+else
+
+
 echo "$(tput setaf 9)[$(tput setaf 6)*$(tput setaf 9)]$(tput setaf 2) Updateando el Sistema ... "
 apt update -y &> /dev/null
 
@@ -142,7 +153,7 @@ figlet Instalando Monitorización:
 echo "$(tput setaf 9)[$(tput setaf 6)*$(tput setaf 9)]$(tput setaf 2) Instalando NetGIOS ... "
 apt install nagios4 nagios-nrpe-plugin -y &> /dev/null
 
-echo "$(tput setaf 9)[$(tput staf 3)*$(tput setaf 9)]$(tput setaf 2) Completado. "
+echo "$(tput setaf 9)[$(tput setaf 3)*$(tput setaf 9)]$(tput setaf 2) Completado. "
 sleep 1
 
 
@@ -160,3 +171,4 @@ chmod +x ssh_server &> /dev/null
 chmod +x static_ip &> /dev/null
 chmod +x ufw_server &> /dev/null
 chmod +x vpn_server &> /dev/null
+fi

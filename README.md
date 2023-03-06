@@ -20,7 +20,7 @@ mkdir LinuxTool
 1. Has de clonar el repositorio en cualquier carpeta de trabajo, por ejemplo, /opt.
 2. git clone https://github.com/ShadowVMX/LinuxAdminTool.git
 3. cd LinuxAdminTool
-4. 
+4. chmod +x install.sh
 
 # Protocolos y Archivos qué configurará:
 

@@ -20,8 +20,8 @@ Este Script es de vital importancia para los Administradores de Sistemas y Servi
 1. Has de clonar el repositorio en cualquier carpeta de trabajo, por ejemplo, /opt.
 2. git clone https://github.com/ShadowVMX/LinuxAdminTool.git
 3. cd LinuxAdminTool
-4. chmod +x install.sh
-5. ./install.sh <--> bash install.sh
+4. chmod +x SwissAdminTool
+5. ./SwissAdminTool <--> bash SwissAdminTool
 
 # Protocolos y Archivos qué configurará:
 

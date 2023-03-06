@@ -8,5 +8,19 @@ LinuxAdminTool es una herramienta desarrollada en Bash para los Administradores 
 podemos llevar a cabo la creación de un Servicio específico cómo puede ser DHCP,DNS,FTP,HTTP,SSH, etc ... Sin necesidad de configurar ningún
 archivo pues la herramienta lo lleva a cabo de forma automatizada sin qué el Administrador deba de tocar mucha configuración.
 
-Este Script es necesario para la configuración y mantenimiento de servidores.
+Este Script es de vital importancia para los Administradores de Sistemas y Servidores pues, llevará a cabo de forma automatizada la instalación de los distintos servicios y la configuración súper cómoda y eficiente de los mismos.
+
+# Protocolos y Archivos qué configurará:
+
+- BackUps.
+- DHCP.
+- DNS.
+- FTP.
+- MySQL.
+- Configuración IP (Static // Dynamic).
+- Comprobación de configuración de Servidor.
+- SSH.
+- UFW (FireWall).
+- VPN.
+
 

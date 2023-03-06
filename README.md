@@ -12,6 +12,7 @@ Este Script es de vital importancia para los Administradores de Sistemas y Servi
 # Creación de Directorio en OPT:
 
 cd /opt
+
 mkdir LinuxTool
 
 

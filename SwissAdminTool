@@ -19,6 +19,7 @@ chmod +x static_ip &> /dev/null
 chmod +x ufw_server &> /dev/null
 chmod +x vpn_server &> /dev/null
 
+
 trap closeit SIGINT
 
 function closeit(){
@@ -53,15 +54,17 @@ echo " "
 echo "$(tput setaf 2)[OPCIONES DE EJECUCIÓN Y/O INSTALACIÓN]:" 
 
 echo " "
-echo -n "$(tput setaf 3)[1.] $(tput setaf 4) Instalar." && echo "           $(tput setaf 3)[6.] $(tput setaf 4) IP Estática."
+echo -n "$(tput setaf 3)[1.] $(tput setaf 4) Instalar." && echo "           $(tput setaf 3)[7.] $(tput setaf 4) IP Estática."
 echo " "
-echo -n "$(tput setaf 3)[2.] $(tput setaf 4) DNS." && echo "                $(tput setaf 3)[7.] $(tput setaf 4) SSH."
+echo -n "$(tput setaf 3)[2.] $(tput setaf 4) DNS." && echo "                $(tput setaf 3)[8.] $(tput setaf 4) SSH."
 echo " "
-echo -n "$(tput setaf 3)[3.] $(tput setaf 4) BackUp." && echo "             $(tput setaf 3)[8.] $(tput setaf 4) IP Dinámica."
+echo -n "$(tput setaf 3)[3.] $(tput setaf 4) BackUp." && echo "             $(tput setaf 3)[9.] $(tput setaf 4) IP Dinámica."
 echo " "
-echo -n "$(tput setaf 3)[4.] $(tput setaf 4) FTP." && echo "                $(tput setaf 3)[9.] $(tput setaf 4) UFW."
+echo -n "$(tput setaf 3)[4.] $(tput setaf 4) FTP." && echo "                $(tput setaf 3)[10.] $(tput setaf 4) UFW."
 echo " "
-echo -n "$(tput setaf 3)[5.] $(tput setaf 4) DHCP." && echo "               $(tput setaf 3)[10.] $(tput setaf 4) VPN."
+echo -n "$(tput setaf 3)[5.] $(tput setaf 4) DHCP." && echo "               $(tput setaf 3)[11.] $(tput setaf 4) VPN."
+echo " "
+echo -n "$(tput setaf 3)[6.] $(tput setaf 4) Server Config." && echo "      $(tput setaf 3)[12.] $(tput setaf 4) MySQL."
 
 echo " "
 echo " "
@@ -87,19 +90,25 @@ case $answer in
         ./dhcp_server
         ;;
     6)
-        ./static_ip
+        ./server_config
         ;;
     7)
-        ./ssh_server
+        ./static_ip
         ;;
     8)
-        ./no_static_ip
+        ./ssh_server
         ;;
     9)
-        ./ufw_server
+        ./no_static_ip
         ;;
     10)
+        ./ufw_server
+        ;;
+    11)
         ./vpn_server
+        ;;
+    12)
+        ./mysql__server
         ;;
     *)
         echo "$(tput setaf 1)[*] $(tput setaf 4)Opción no válida."
@@ -108,3 +117,4 @@ esac
 
 
 tput sgr0
+

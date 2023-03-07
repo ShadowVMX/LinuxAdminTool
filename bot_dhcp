@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#pip3 install --force-reinstall -v "python-telegram-bot==13.5"
+
 # Configuración del bot de Telegram
 TELEGRAM_BOT_TOKEN="5981434873:AAE1e260sk_8Xu5Gy9N93zodag9WBHuaxOM"
 TELEGRAM_CHAT_ID="5088751124"

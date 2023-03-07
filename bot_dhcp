@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Configuración del bot de Telegram
+TELEGRAM_BOT_TOKEN="5981434873:AAE1e260sk_8Xu5Gy9N93zodag9WBHuaxOM"
+TELEGRAM_CHAT_ID="5088751124"
+
+# Monitoreo del registro del DHCP
+tail -f /var/log/syslog | while read LINE; do
+  if echo "$LINE" | grep -q "DHCPREQUEST"; then
+    # Obtener la dirección MAC del cliente
+    MAC_ADDRESS=$(echo "$LINE" | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}')
+    # Crear el mensaje a enviar
+    MESSAGE="Nuevo cliente DHCP conectado:\nDirección MAC: $MAC_ADDRESS"
+    # Enviar el mensaje a través del bot de Telegram
+    telegram-send --token "$TELEGRAM_BOT_TOKEN" --chat_id "$TELEGRAM_CHAT_ID" "$MESSAGE"
+  fi
+done

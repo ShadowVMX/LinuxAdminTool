@@ -14,6 +14,8 @@ Este Script es de vital importancia para los Administradores de Sistemas y Servi
 - cd /opt
 - mkdir LinuxTool
 
+![linux-arbol-directorios](https://user-images.githubusercontent.com/92258683/223760620-203ca48d-9801-4c0d-b1ef-c1eb70ef698c.jpg)
+
 
 # Instalación:
 
@@ -35,6 +37,9 @@ Este Script es de vital importancia para los Administradores de Sistemas y Servi
 - SSH.
 - UFW (FireWall).
 - VPN. (BetaProcess).
+
+![network-protocols-osi](https://user-images.githubusercontent.com/92258683/223760639-d4c8dc50-0db6-4242-9f44-e4003bb29dab.jpg)
+
 
 # Sistemas Probados:
 
@@ -59,6 +64,9 @@ Se implantan 3 códigos en Python para qué, a través de un bot, podamos recibi
 
 ¿Quién conecta? ¿IP qué conecta? ¿Nombre de dispositivo? ¿Recurso al qué accede? ¿Hora de conexión?
 
+![Mejores-bots-de-Telegram-1](https://user-images.githubusercontent.com/92258683/223760665-3a9608a6-9d50-4ef8-9567-ce9dae73ee4f.png)
+
+
 # Implementaciones futuras:
 
 - SMTP.
@@ -66,3 +74,8 @@ Se implantan 3 códigos en Python para qué, a través de un bot, podamos recibi
 - Nagios.
 - Docker.
 - Kubernetes.
+
+![icono-de-monitorizacion-elemento-simple-de-la-coleccion-de-seguridad-de-internet-creative-monitoring-icono-para-diseno-web-plantillas-infografias-y-mucho-mas-2c7ybdj](https://user-images.githubusercontent.com/92258683/223760679-4e900995-26ff-42f8-8e7f-d2744a108a0c.jpg)
+
+
+

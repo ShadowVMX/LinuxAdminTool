@@ -4,10 +4,10 @@
 
 
 TOKEN="5981434873:AAE1e260sk_8Xu5Gy9N93zodag9WBHuaxOM"
-CHAT_ID="-1001876237467"
+CHAT_ID="5088751124"
 LOG_FILE="/var/log/syslog"
 
-#70521
+
 
 
 # Inicia el bucle infinito para monitorear el archivo de registro de DHCP

@@ -51,7 +51,13 @@ Este Script es de vital importancia para los Administradores de Sistemas y Servi
 
 # Bot_Telegram.
 
--
+Se implantan 3 códigos en Python para qué, a través de un bot, podamos recibir mensajes de texto con la siguiente información:
+
+- DHCP.
+- FTP.
+- SSH.
+
+¿Quién conecta? ¿IP qué conecta? ¿Nombre de dispositivo? ¿Recurso al qué accede? ¿Hora de conexión?
 
 # Implementaciones futuras:
 

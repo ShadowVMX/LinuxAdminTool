@@ -54,6 +54,9 @@ Este Script es de vital importancia para los Administradores de Sistemas y Servi
 - Deepin.
 - Pop!_OS.
 
+![debian-logo-1024x576](https://user-images.githubusercontent.com/92258683/223761042-6160bbda-6e19-4800-a0cb-a2e5d378c7e6.png)
+
+
 # Bot_Telegram.
 
 Se implantan 3 códigos en Python para qué, a través de un bot, podamos recibir mensajes de texto con la siguiente información:

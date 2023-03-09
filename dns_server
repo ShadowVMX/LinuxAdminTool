@@ -14,7 +14,7 @@ echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)search $dom
 
 # Agregar la dirección IP del servidor DNS al archivo hosts
 echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Agregando dirección IP del servidor DNS al archivo hosts..."
-echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)$dns_ip    www.$domain" >> /etc/hosts
+echo "dns_ip    www.$domain" >> /etc/hosts
 
 # Reiniciar el servicio de red
 echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Reiniciando el servicio de red..."

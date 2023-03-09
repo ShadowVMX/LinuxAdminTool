@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Pedir la IP y la máscara al usuario
-read -p "Introduce la dirección IP: " IP
-read -p "Introduce la máscara de red: " MASK
+read -p "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Introduce la dirección IP: " IP
+read -p "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Introduce la máscara de red: " MASK
 
 # Configurar la IP estática en el archivo /etc/network/interfaces
 cat << EOF > /etc/network/interfaces
@@ -15,6 +15,6 @@ EOF
 # Reiniciar el servicio de red para aplicar los cambios
 systemctl restart networking.service
 
-echo "La dirección IP se ha configurado a $IP"
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)La dirección IP se ha configurado a $IP"
 
 tput sgr0

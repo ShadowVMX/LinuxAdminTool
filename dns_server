@@ -1,25 +1,25 @@
 #!/bin/bash
 
 # Pedir al usuario la dirección IP del servidor DNS y el dominio
-read -p "Introduce la dirección IP del servidor DNS: " dns_ip
-read -p "Introduce el dominio: " domain
+read -p "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Introduce la dirección IP del servidor DNS: " dns_ip
+read -p "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Introduce el dominio: " domain
 
 # Configurar el servidor DNS
-echo "Configurando servidor DNS..."
-echo "nameserver $dns_ip" > /etc/resolv.conf
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Configurando servidor DNS..."
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)nameserver $dns_ip" > /etc/resolv.conf
 
 # Configurar el dominio
-echo "Configurando dominio..."
-echo "search $domain" >> /etc/resolv.conf
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Configurando dominio..."
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)search $domain" >> /etc/resolv.conf
 
 # Agregar la dirección IP del servidor DNS al archivo hosts
-echo "Agregando dirección IP del servidor DNS al archivo hosts..."
-echo "$dns_ip    www.$domain" >> /etc/hosts
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Agregando dirección IP del servidor DNS al archivo hosts..."
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)$dns_ip    www.$domain" >> /etc/hosts
 
 # Reiniciar el servicio de red
-echo "Reiniciando el servicio de red..."
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Reiniciando el servicio de red..."
 systemctl restart network
 
-echo "Configuración completa."
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Configuración completa."
 
 tput sgr0

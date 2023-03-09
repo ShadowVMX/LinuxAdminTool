@@ -1,11 +1,13 @@
 #!/bin/bash
 
 # Obtener la configuración de red
-echo "Obteniendo la configuración de red..."
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Obteniendo la configuración de red..."
 ifconfig -a > network_config.txt
 
+sleep 1
+
 # Obtener la configuración de sistema
-echo "Obteniendo la configuración de sistema..."
+echo "O$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)bteniendo la configuración de sistema..."
 uname -a > system_config.txt
 cat /proc/cpuinfo >> system_config.txt
 cat /proc/meminfo >> system_config.txt
@@ -13,12 +15,18 @@ lscpu >> system_config.txt
 lsblk >> system_config.txt
 df -h >> system_config.txt
 
+sleep 1
+
 # Comprimir los archivos en un archivo .zip
-echo "Comprimiendo los archivos..."
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Comprimiendo los archivos..."
 zip config_files.zip network_config.txt system_config.txt
 
+sleep 1
+
 # Eliminar los archivos de texto
-echo "Eliminando los archivos de texto..."
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Eliminando los archivos de texto..."
 rm network_config.txt system_config.txt
+
+sleep 1
 
 echo "La configuración de red y de sistema ha sido guardada en el archivo config_files.zip."

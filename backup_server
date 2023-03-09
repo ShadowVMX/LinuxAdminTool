@@ -2,7 +2,10 @@
 
 #Crear carpeta en opt.
 
-mkdir /opt/backups
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) Creando carpeta backups en directorio opt... "
+echo " "
+
+mkdir /opt/backups 2> /dev/null
 
 
 # Definir la ubicación donde se guardará la copia de seguridad
@@ -11,6 +14,14 @@ backup_dir="/opt/backups"
 # Definir la fecha actual para agregarla al nombre del archivo de copia de seguridad
 date=$(date +%Y-%m-%d-%H-%M-%S)
 
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) Las copias de seguridad se hacen de --> /etc /var/www y /home."
+echo " "
+
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) Si desea modificar las rutas, agrega diferentes líneas ..."
+echo " "
+
+sleep 2
+
 # Definir una lista de los archivos y directorios importantes que se incluirán en la copia de seguridad
 important_files=(
     "/etc"
@@ -18,6 +29,21 @@ important_files=(
     "/home"
 )
 
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) Comenzando la copia de seguridad: "
+echo " "
+sleep 1
+
+read -p "¿Desea la compresión en segundo plano para evitar ruido en pantalla? (Y/N) --> " kkanswer
+echo " "
+
+if [[ $kkanswer == Y ]] ; then
+	echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) Llevando a cabo la copia de seguridad ..."
+	tar -czvf "$backup_dir/backup-$date.tar.gz" "${important_files[@]}" &> /dev/null
+	echo " "
+	echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6) Completado."
+	echo " "
+	exit
+else
 # Crear un archivo comprimido con los archivos seleccionados
 tar -czvf "$backup_dir/backup-$date.tar.gz" "${important_files[@]}"
 
@@ -28,5 +54,5 @@ then
 else
     echo "Error al realizar la copia de seguridad."
 fi
-
+fi
 tput sgr0

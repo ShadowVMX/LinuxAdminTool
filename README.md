@@ -97,5 +97,8 @@ Gmail --> juanmacoello94@gmail.com
 
 <img width="545" alt="photo" src="https://user-images.githubusercontent.com/92258683/228806532-9a052839-23b5-43cf-bac5-3d70e3a37459.png">
 
+Después de tantos años de estudio y desarrollo, sería una gran ayuda y motivación para mi un buen café para seguir dándole caña hasta largas horas de la madrugada.
+
+¡Saludos!
 
 https://www.buymeacoffee.com/ShadowVMX

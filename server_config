@@ -2,12 +2,12 @@
 
 # Obtener la configuración de red
 echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)Obteniendo la configuración de red..."
-ifconfig -a > network_config.txt
+ip a > network_config.txt
 
 sleep 1
 
 # Obtener la configuración de sistema
-echo "O$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)bteniendo la configuración de sistema..."
+echo "$(tput setaf 1)[$(tput setaf 3)*$(tput setaf 1)]$(tput setaf 6)bteniendo la configuración de sistema..."
 uname -a > system_config.txt
 cat /proc/cpuinfo >> system_config.txt
 cat /proc/meminfo >> system_config.txt
@@ -29,4 +29,10 @@ rm network_config.txt system_config.txt
 
 sleep 1
 
-echo "La configuración de red y de sistema ha sido guardada en el archivo config_files.zip."
+echo "La configuración de red y de sistema ha sido guardada en el archivo config_files.zip, en la carpeta report."
+
+mkdir report
+
+mv config_files.zip report/
+
+tput sgr0

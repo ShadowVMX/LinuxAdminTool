@@ -1,4 +1,4 @@
-#!/bin/bash
+/bin/bash
 #
 #Instalación de los servicios necesarios.
 #
@@ -38,6 +38,7 @@ fi
 
 apt install figlet -y &> /dev/null
 apt install net-tools -y &> /dev/null
+apt install zip -y &> /dev/null
 
 echo "$(tput setaf 6)"
 
@@ -172,3 +173,4 @@ chmod +x static_ip &> /dev/null
 chmod +x ufw_server &> /dev/null
 chmod +x vpn_server &> /dev/null
 fi
+

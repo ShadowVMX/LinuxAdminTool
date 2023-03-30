@@ -3,10 +3,10 @@ import re
 import requests
 
 # Token del bot de Telegram
-TOKEN = '5981434873:AAE1e260sk_8Xu5Gy9N93zodag9WBHuaxOM'
+TOKEN = ''
 
 # ID del chat donde se enviará el mensaje
-CHAT_ID = '5088751124'
+CHAT_ID = ''
 
 # Expresión regular para buscar la información del cliente en el registro DHCP
 regex = r'DHCPACK on (\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) to ([^\s]+) \(([\dA-Fa-f]{2}[:-]){5}([\dA-Fa-f]{2})\).*lease (\d+)'

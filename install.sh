@@ -149,13 +149,13 @@ sleep 1
 
 echo "$(tput setaf 6)"
 
-figlet Instalando Monitorización:
+#figlet Instalando Monitorización:
 
-echo "$(tput setaf 9)[$(tput setaf 6)*$(tput setaf 9)]$(tput setaf 2) Instalando NetGIOS ... "
-apt install nagios4 nagios-nrpe-plugin -y &> /dev/null
+#echo "$(tput setaf 9)[$(tput setaf 6)*$(tput setaf 9)]$(tput setaf 2) Instalando NetGIOS ... "
+#apt install nagios4 nagios-nrpe-plugin -y &> /dev/null
 
-echo "$(tput setaf 9)[$(tput setaf 3)*$(tput setaf 9)]$(tput setaf 2) Completado. "
-sleep 1
+#echo "$(tput setaf 9)[$(tput setaf 3)*$(tput setaf 9)]$(tput setaf 2) Completado. "
+#sleep 1
 
 
 tput sgr0

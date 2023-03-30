@@ -25,12 +25,10 @@ trap closeit SIGINT
 function closeit(){
 	echo "$(tput setaf 8)Ctrl_C detectado..."
 	echo " "
-	sleep 0.8
 	echo "$(tput setaf 4)Saliendo "
 	echo " "
 	echo -n "." && sleep 0.5 && echo -n "." && sleep 0.5 && echo -n "." && sleep 0.5 && echo -n "." && sleep 0.5 && echo -n "." && sleep 0.5 && echo -n "." && sleep 0.5
 	echo " "
-	sleep 0.8
 	echo "$(tput setaf 6)Éxito."
 	tput sgr0
 	exit
@@ -78,7 +76,7 @@ echo -n "$(tput setaf 3)[6.] $(tput setaf 4) Server Config." && echo "      $(tp
 
 echo " "
 echo " "
-sleep 2
+sleep 1.5
 
 read -p "$(tput setaf 8)¿Qué desea realizar? $(tput setaf 1)--> $(tput setaf 4)" answer
 
@@ -127,4 +125,3 @@ esac
 
 
 tput sgr0
-

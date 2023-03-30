@@ -164,7 +164,7 @@ chmod +x SwissAdminTool &> /dev/null
 chmod +x backup_server &> /dev/null
 chmod +x dhcp_server &> /dev/null
 chmod +x dns_server &> /dev/null
-chmod +x ftp_server_creation &> /dev/null
+chmod +x ftp_server &> /dev/null
 chmod +x mysql_server &> /dev/null
 chmod +x no_static_ip &> /dev/null
 chmod +x server_config &> /dev/null

@@ -95,7 +95,7 @@ Gmail --> juanmacoello94@gmail.com
 
 # Buy me a Coffee:
 
-![photo](https://user-images.githubusercontent.com/92258683/228806348-d70b7bd0-10b4-4fe7-ab4d-e84f2e14c150.jpeg)
+<img width="545" alt="photo" src="https://user-images.githubusercontent.com/92258683/228806532-9a052839-23b5-43cf-bac5-3d70e3a37459.png">
 
 
 https://www.buymeacoffee.com/ShadowVMX

@@ -50,7 +50,7 @@ tar -czvf "$backup_dir/backup-$date.tar.gz" "${important_files[@]}"
 # Confirmar que la copia de seguridad ha sido realizada correctamente
 if [ $? -eq 0 ]
 then
-    echo "Copia de seguridad realizada correctamente."
+    echo "Copia de seguridad realizada correctamente, reporte guardado en /opt/backup."
 else
     echo "Error al realizar la copia de seguridad."
 fi

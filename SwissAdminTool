@@ -62,7 +62,7 @@ echo " "
 echo "$(tput setaf 2)[OPCIONES DE EJECUCIÓN Y/O INSTALACIÓN]:" 
 
 echo " "
-echo -n "$(tput setaf 3)[1.] $(tput setaf 4) Instalar." && echo "           $(tput setaf 3)[7.] $(tput setaf 4) IP Estática."
+echo -n "$(tput setaf 3)[1.] $(tput setaf 4) Instalar. [Rec]" && echo "     $(tput setaf 3)[7.] $(tput setaf 4) IP Estática."
 echo " "
 echo -n "$(tput setaf 3)[2.] $(tput setaf 4) DNS." && echo "                $(tput setaf 3)[8.] $(tput setaf 4) SSH."
 echo " "

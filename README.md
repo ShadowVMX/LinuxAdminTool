@@ -82,4 +82,14 @@ Se implantan 3 códigos en Python para qué, a través de un bot, podamos recibi
 ![icono-de-monitorizacion-elemento-simple-de-la-coleccion-de-seguridad-de-internet-creative-monitoring-icono-para-diseno-web-plantillas-infografias-y-mucho-mas-2c7ybdj](https://user-images.githubusercontent.com/92258683/223760679-4e900995-26ff-42f8-8e7f-d2744a108a0c.jpg)
 
 
+# Redes Sociales:
+
+LinkedIn --> https://www.linkedin.com/in/juanma-coello-romero-757280226/
+
+Instagram --> @ShadowVMX
+
+GitHub --> https://github.com/ShadowVMX
+
+Gmail --> juanmacoello94@gmail.com
+
 

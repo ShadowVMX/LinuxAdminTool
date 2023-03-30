@@ -36,7 +36,7 @@ function closeit(){
 	exit
 }
 
-echo "$(tput setaf 3)" && figlet SwissAdminTool
+echo "$(tput setaf 3)" && figlet SwissAdminTool 2> /dev/null
 echo " "
 echo "$(tput setaf 4) Versión $(tput setaf 8)1.0 para $(tput setaf 3)Administradores de Servidores y Sistemas."
 echo " "

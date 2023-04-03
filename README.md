@@ -78,6 +78,7 @@ Se implantan 3 códigos en Python para qué, a través de un bot, podamos recibi
 - Nagios.
 - Docker.
 - Kubernetes.
+- AWS.
 
 ![icono-de-monitorizacion-elemento-simple-de-la-coleccion-de-seguridad-de-internet-creative-monitoring-icono-para-diseno-web-plantillas-infografias-y-mucho-mas-2c7ybdj](https://user-images.githubusercontent.com/92258683/223760679-4e900995-26ff-42f8-8e7f-d2744a108a0c.jpg)
 
